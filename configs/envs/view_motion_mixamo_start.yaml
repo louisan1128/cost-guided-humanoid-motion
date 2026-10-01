@@ -1,0 +1,8 @@
+env_name: "view_motion"
+char_file: "data/assets/humanoid/humanoid.xml"
+camera_mode: "track"
+episode_length: 8.0
+global_obs: false
+root_height_obs: true
+key_bodies: ["head", "right_hand", "left_hand", "right_foot", "left_foot"]
+motion_file: "/home/an/Desktop/project_alpha/data/reference_motions/mixamo_start_temporalfix.pkl"

@@ -1,0 +1,14 @@
+# MimicKit MotionLib reference list for the first shared generic-humanoid PPO pilot.
+# Equal weights mean equal probability when MotionLib chooses a clip at reset.
+# This is a reference-motion list, not a dataset of physical PPO rollouts.
+motions:
+  - file: /home/an/Desktop/project_alpha/data/reference_motions/mixamo_start_xyfix.pkl
+    weight: 1.0
+  - file: /home/an/Desktop/project_alpha/data/reference_motions/humanoid_walk_neck_fixed.pkl
+    weight: 1.0
+  - file: /home/an/Desktop/project_alpha/data/reference_motions/humanoid_turn_left_5s_8s.pkl
+    weight: 1.0
+  - file: /home/an/Desktop/project_alpha/data/reference_motions/humanoid_turn_right_5s_8s.pkl
+    weight: 1.0
+  - file: /home/an/Desktop/project_alpha/data/reference_motions/mixamo_stop_xyfix.pkl
+    weight: 1.0

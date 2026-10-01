@@ -1,0 +1,23 @@
+motions:
+- file: /home/an/Desktop/project_alpha/data/reference_motions/mixamo_start_xyfix.pkl
+  weight: 1.0
+- file: /home/an/Desktop/project_alpha/data/reference_motions/humanoid_walk_neck_fixed.pkl
+  weight: 1.0
+- file: /home/an/Desktop/project_alpha/data/reference_motions/humanoid_turn_left_5s_8s.pkl
+  weight: 1.0
+- file: /home/an/Desktop/project_alpha/data/reference_motions/humanoid_turn_right_5s_8s.pkl
+  weight: 1.0
+- file: /home/an/Desktop/project_alpha/data/reference_motions/mixamo_stop_xyfix.pkl
+  weight: 1.0
+- file: /home/an/Desktop/project_alpha/data/reference_motions/humanoid_start_to_walk_probe_v1.pkl
+  weight: 1.0
+- file: /home/an/Desktop/project_alpha/data/reference_motions/inertial_walk_left_500_v1.pkl
+  weight: 1.0
+- file: /home/an/Desktop/project_alpha/data/reference_motions/inertial_left_walk_300_v1_extended.pkl
+  weight: 1.0
+- file: /home/an/Desktop/project_alpha/data/reference_motions/inertial_walk_right_500_v1.pkl
+  weight: 1.0
+- file: /home/an/Desktop/project_alpha/data/reference_motions/inertial_right_walk_300_v1_extended.pkl
+  weight: 1.0
+- file: /home/an/Desktop/project_alpha/data/reference_motions/inertial_walk_stop_500_v1_hold.pkl
+  weight: 1.0

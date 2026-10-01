@@ -1,0 +1,51 @@
+# Narrow-range validation of revised speed reward: 0.8-1.2 m/s.
+env_name: "speed_tracking_deepmimic"
+
+char_file: "data/assets/g1/g1.xml"
+camera_mode: "track"
+
+episode_length: 10.0
+global_obs: true
+root_height_obs: true
+pose_termination: true
+pose_termination_dist: 1.0
+enable_phase_obs: false
+enable_tar_obs: true
+num_phase_encoding: 4
+tar_obs_steps: [1, 2, 3]
+rand_reset: true
+zero_center_action: true
+log_tracking_error: true
+
+ref_char_offset: [2.0, 0.0, 0.0]
+init_pose: [0, 0, 0.8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.57, 0, 0, 0, 0, 0, 0, 1.57, 0, 0, 0]
+
+enable_early_termination: true
+key_bodies: ["left_ankle_roll_link", "right_ankle_roll_link", "head_link", "left_wrist_yaw_link", "right_wrist_yaw_link"]
+contact_bodies: ["left_knee_link", "left_ankle_pitch_link", "left_ankle_roll_link", "right_knee_link", "right_ankle_pitch_link", "right_ankle_roll_link"]
+motion_file: "data/motions/g1/g1_walk.pkl"
+
+joint_err_w: [1.0, 1.0, 1.0, 0.6, 0.5, 0.5, 1.0, 1.0, 1.0, 0.6, 0.5, 0.5, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.6, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 0.6, 0.5, 0.5, 0.5]
+
+# Keep the reference pose/style, but remove the natural-speed root-velocity term.
+reward_pose_w: 0.6
+reward_vel_w: 0.1
+reward_root_pose_w: 0.15
+reward_root_vel_w: 0.0
+reward_key_pos_w: 0.15
+reward_pose_scale: 0.25
+reward_vel_scale: 0.01
+reward_root_pose_scale: 5.0
+reward_root_vel_scale: 1.0
+reward_key_pos_scale: 10.0
+
+target_speed_min: 0.8
+target_speed_max: 1.2
+command_change_time_min: 1000.0
+command_change_time_max: 1000.0
+# Do not terminate or penalize the robot for moving ahead of/behind the 1.0 m/s reference.
+track_global_root: false
+# Prioritize commanded velocity over exact imitation.
+speed_reward_weight: 0.7
+speed_error_scale: 4.0
+lateral_error_scale: 2.0

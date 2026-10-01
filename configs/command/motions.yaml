@@ -1,0 +1,12 @@
+# Stop entry includes the previously tested five-second hold. Same source group as stop.
+motions:
+- file: data/reference_motions/mixamo_start_xyfix.pkl
+  weight: 1.0
+- file: data/reference_motions/humanoid_walk_neck_fixed.pkl
+  weight: 1.0
+- file: data/reference_motions/humanoid_turn_left_5s_8s.pkl
+  weight: 1.0
+- file: data/reference_motions/humanoid_turn_right_5s_8s.pkl
+  weight: 1.0
+- file: data/reference_motions/inertial_walk_stop_500_v1_hold5s_probe.pkl
+  weight: 1.0

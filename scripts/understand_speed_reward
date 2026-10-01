@@ -1,0 +1,20 @@
+import math
+
+target_speed = 1.0
+actual_speed = 1.0
+lateral_speed = 0.5
+
+forward_error = actual_speed - target_speed
+
+reward = math.exp(
+    -4 * forward_error**2
+    -2 * lateral_speed**2
+)
+
+print(f"좌우 속도={lateral_speed}, 보상={reward:.3f}")
+
+robot_state = [0.1, -0.2, 0.9]
+
+for target_speed in [0.8, 1.0, 1.2]:
+    observation = robot_state + [target_speed]
+    print(f"목표 속도={target_speed}, observation={observation}")

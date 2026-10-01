@@ -1,0 +1,8 @@
+{
+  "start_walk": "humanoid_start_to_walk_probe_v1",
+  "walk_left": "inertial_walk_left_500_v1",
+  "left_walk": "inertial_left_walk_300_v1_extended",
+  "walk_right": "inertial_walk_right_500_v1",
+  "right_walk": "inertial_right_walk_300_v1_extended",
+  "walk_stop": "inertial_walk_stop_500_v1_hold"
+}

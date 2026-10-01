@@ -1,0 +1,76 @@
+schema_version: 3
+design_version: '1.0'
+design_date: '2026-09-22'
+status: command_policy_pilot
+title: Goal-Conditioned Motion Diffusion for Closed-Loop Humanoid Control
+plan: docs/plan.md
+task:
+  name: goal_conditioned_full_body_motion
+  terrain: flat
+  robot: mimickit_generic_humanoid
+  robot_asset: data/assets/humanoid/humanoid.xml
+  required_skills:
+  - stand
+  - walk
+  - gentle_left_turn
+  - gentle_right_turn
+  - start
+  - stop
+  goal_fields:
+  - position_xy
+  - yaw
+  - remaining_time
+  - terminal_speed
+  - stop_or_continue
+  primary_success: reach_goal_and_hold_stop
+  verified_goal_range: null
+simulation:
+  preferred_backend: isaac_lab
+  generic_humanoid_runtime_verified: true
+  source_commit: null
+  versions_locked: false
+  physics_hz: 120
+  tracker_hz: 30
+learning:
+  tracker_optimizer: PPO
+  tracker_interface: reference_conditioned
+  tracker_checkpoint: outputs/ppo_transition_stop_hold5s_500_seed0/model.pt
+  separate_command_teacher_required: false
+  data_source: physical_reference_tracking_rollouts
+  goal_labeling: hindsight_future_endpoint
+  command_teacher:
+    method: PPO + AMP
+    status: smoke_only
+    config: configs/command/env.yaml
+    requires_tracker_replay_validation: true
+generation:
+  output: future_full_body_reference
+  baselines:
+  - motion_retrieval_and_stitching
+  - deterministic_chunk_mlp
+  model: goal_conditioned_motion_diffusion
+  candidate_count: 1
+  history_frames: null
+  prediction_frames: null
+  execution_frames: null
+evaluation:
+  fixed_shared_tracker: true
+  source_group_split: true
+  paired_scenarios: true
+  model_training_seed_target: 3
+  pilot_scenarios: 20
+  initial_id_test_scenarios: 100
+  initial_heldout_test_scenarios: 100
+  budget_frozen: false
+  required_ablations:
+  - actual_vs_predicted_history
+  - execution_horizon
+extensions:
+  after_core_report:
+  - single_static_obstacle
+  - walk_run
+  separate_future_project: terrain_locomotion
+legacy:
+  robot: g1
+  purpose: previous_speed_conditioned_ppo_experiments
+  checkpoints_directly_compatible: false
