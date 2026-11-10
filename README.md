@@ -4,9 +4,7 @@
 
 An undergraduate personal project built with MimicKit and Isaac Lab. I started with a PPO reference tracker, collected physical rollouts, trained MLP and diffusion models, and explored obstacle avoidance through cost guidance. The final system uses a learned action decoder conditioned on future root motion.
 
-[![Isaac Sim · avoiding a 1.8 m wall · 12 seconds](reports/assets/readme_demo/wall_scene11_heading60_isaac_12s.gif)](reports/assets/readme_demo/wall_scene11_heading60_isaac_12s.mp4)
-
-[Watch the Isaac Sim capture · 12-second MP4](reports/assets/readme_demo/wall_scene11_heading60_isaac_12s.mp4)
+![Isaac Sim · avoiding a 1.8 m wall · 12 seconds](reports/assets/readme_demo/wall_scene11_heading60_isaac_12s.gif)
 
 **Walking around a 1.8 m wall to a goal about 6.36 m away, then stopping with a 60° leftward change in heading.** This is an Isaac Sim replay of a recorded physical rollout using cost-guided diffusion. No analytic root-path correction was applied after generation.
 
@@ -15,13 +13,11 @@ An undergraduate personal project built with MimicKit and Isaac Lab. I started w
 
 This additional demo uses scene 11's obstacle layout and goal distance, with a target heading of +60° relative to the initial heading and sampling seed 4504. Its starting rollout frame also differs from the V2 evaluation (`source_shift=0` here, `15` in V2). The full run lasted 16.27 seconds and succeeded without a collision or fall, with final position and heading errors of 0.178 m and 2.84°. The 12-second excerpt does not show the entire stationary hold used to verify success.
 
-This selected success is excluded from the V2 results below. The original V2 success rate for 1.8 m walls was 4/8; wall avoidance is still unreliable. [Video provenance and result](reports/assets/readme_demo/wall_scene11_heading60_isaac_12s_manifest.json)
+This selected success is excluded from the V2 results below. The original V2 success rate for 1.8 m walls was 4/8; wall avoidance is still unreliable.
 
 </details>
 
-[Diffusion success](reports/assets/guidance_comparison_v2/D2_scene04_PASS_analysis.mp4) · [MLP failure in the same scene](reports/assets/guidance_comparison_v2/M1_scene04_FAIL_analysis.mp4) · [Wall failure](reports/assets/guidance_comparison_v2/D2_scene02_FAIL_analysis.mp4)
-
-Videos are rendered from states recorded during physical simulation. Success is determined from the original simulation logs. The wall-failure video shows the first 20 seconds of a 45-second run.
+Success is determined from the original physical simulation logs.
 
 ## How it works
 
@@ -66,8 +62,6 @@ Cost guidance substantially improved raw diffusion. However, there is only one t
 
 Failures remain on larger obstacles and walls, including falls while stopping. Latency measures planning and decoding in a single environment, excluding physics. Guided inference exceeds the 30 Hz real-time budget. No physical robot experiments were conducted.
 
-[Protocol, results, and failure analysis](reports/final_results.md) · [Per-episode CSV](reports/assets/guidance_comparison_v2/episodes.csv)
-
 ## Code and reproduction
 
 | Location | Contents |
@@ -88,16 +82,3 @@ To check the files prepared for publication without starting the simulator:
 ```bash
 python3 scripts/check_publish.py
 ```
-
-[Environment and reproduction scope](docs/reproduction.md) · [Script guide](scripts/README.md) · [Repository guide](docs/repository.md)
-
-## Notes and reports
-
-Most detailed documentation is in Korean.
-
-- [Learning guide · 46-page PDF](output/pdf/humanoid_motion_learning_guide_ko.pdf): background, equations, inputs/outputs, and code flow
-- [Detailed report · 51-page PDF](output/pdf/humanoid_motion_final_report_ko.pdf): extended explanations and experimental evidence
-- [Development notes](docs/development_notes.md)
-- [Related work](docs/related_work.md) and [provenance](docs/provenance.md)
-
-PPO, AMP, and simulator integration are based on [MimicKit](https://github.com/xbpeng/MimicKit). My work covers the goal environment, data validation, generator/executor integration, cost guidance, and evaluation tools. AI tools assisted implementation and analysis; I reviewed simulation videos and directed the experiments. External code and motion assets retain their original ownership and licensing terms.
