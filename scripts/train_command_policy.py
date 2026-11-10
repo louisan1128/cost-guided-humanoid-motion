@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import math
 import os
 from pathlib import Path
 import sys
@@ -41,7 +42,53 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--test-episodes", type=int, default=2)
     parser.add_argument("--logger", choices=("txt", "tb", "wandb"), default="txt")
     parser.add_argument("--save-int-models", action="store_true")
+    parser.add_argument("--goal-x", type=float, help="Test goal x in metres")
+    parser.add_argument("--goal-y", type=float, help="Test goal y in metres")
+    parser.add_argument("--goal-yaw-deg", type=float, help="Final heading in degrees")
+    parser.add_argument("--goal-frame", choices=("start", "world"), default="start",
+                        help="start: initial forward/left axes; world: simulator axes")
+    parser.add_argument("--interactive-goal", action="store_true",
+                        help="Manual viewer buttons/keyboard; not a fixed-goal evaluation")
+    parser.add_argument("--click-goal", action="store_true", help="Two viewport clicks: position then heading; run until closed")
+    parser.add_argument("--goal-step", type=float, default=.25)
+    parser.add_argument("--yaw-step-deg", type=float, default=15.)
+    parser.add_argument("--manual-seconds", type=float, default=600.)
     return parser.parse_args()
+
+
+def apply_test_goal(settings, args):
+    values = (args.goal_x, args.goal_y, args.goal_yaw_deg)
+    if all(value is None for value in values):
+        return
+    if any(value is None for value in values):
+        raise ValueError("Provide --goal-x, --goal-y and --goal-yaw-deg together")
+    if args.mode != 'test' or settings['env_name'] != 'goal_amp':
+        raise ValueError("Custom goals require goal_amp in test mode")
+    if not all(math.isfinite(value) for value in values):
+        raise ValueError("Custom goal coordinates must be finite")
+    settings['goal']['fixed_test_goal'] = dict(
+        x=args.goal_x, y=args.goal_y, yaw_deg=args.goal_yaw_deg, frame=args.goal_frame)
+
+
+def apply_interactive_goal(settings, args, engine_settings):
+    if getattr(args,'click_goal',False):
+        args.interactive_goal=True
+    if not args.interactive_goal:
+        return
+    if (args.mode != 'test' or settings['env_name'] != 'goal_amp'
+            or not args.visualize or args.num_envs != 1
+            or engine_settings['engine_name'] != 'isaac_lab'):
+        raise ValueError('Interactive goals require goal_amp/test, --visualize, one env and Isaac Lab')
+    values=(args.goal_step,args.yaw_step_deg,args.manual_seconds)
+    if not all(math.isfinite(x) and x > 0 for x in values):
+        raise ValueError('Manual steps and duration must be positive finite values')
+    settings['goal']['interactive_goal']=dict(position_step=args.goal_step,yaw_step_deg=args.yaw_step_deg)
+    settings['episode_length']=args.manual_seconds
+    if getattr(args,'click_goal',False):
+        settings['goal']['interactive_goal']['click']=True
+        settings['episode_length']=float('inf')
+    # Start calmly if no explicit goal was supplied. Manual edits then move it.
+    settings['goal'].setdefault('fixed_test_goal',dict(x=0.,y=0.,yaw_deg=0.,frame='start'))
 
 
 def main() -> None:
@@ -70,8 +117,10 @@ def main() -> None:
     import yaml
     agent_settings = yaml.safe_load(agent_config.read_text())
     env_settings = yaml.safe_load(env_config.read_text())
-    if env_settings['env_name'] != 'command_amp' or agent_settings['agent_name'] != 'AMP':
-        raise ValueError("This launcher requires command_amp and AMP configs")
+    apply_test_goal(env_settings, args)
+    apply_interactive_goal(env_settings, args, yaml.safe_load(engine_config.read_text()))
+    if env_settings['env_name'] not in ('command_amp', 'goal_amp') or agent_settings['agent_name'] != 'AMP':
+        raise ValueError("This launcher requires command_amp/goal_amp and AMP configs")
     if args.mode == 'test' and model_file is None:
         raise ValueError("--model-file is required in test mode")
     # Source configs use project-relative paths. MimicKit runs from its own
@@ -102,6 +151,10 @@ def main() -> None:
     if args.dry_run:
         print(f"{args.mode}: {args.num_envs} envs, {args.iterations} iterations, {args.max_samples} samples")
         print(f"env={env_config}\nagent={agent_config}\noutput={args.out_dir.resolve()}")
+        if 'fixed_test_goal' in env_settings.get('goal', {}):
+            print(f"fixed_test_goal={env_settings['goal']['fixed_test_goal']}")
+        if args.interactive_goal:
+            print(f"manual_goal={env_settings['goal']['interactive_goal']}; episode_seconds={env_settings['episode_length']}")
         return
     sys.path.insert(0, str(PROJECT_ROOT / "src"))
     sys.path.insert(0, str(mimickit_package_root))
@@ -110,17 +163,22 @@ def main() -> None:
     from humanoid_imitation.envs.command_amp_env import (
         CommandAMPEnv,
     )
+    from humanoid_imitation.envs.goal_amp_env import GoalAMPEnv
     import run as mimickit_run
+    if args.click_goal:
+        from humanoid_imitation.planning.click_goal import run_click_inference
+        mimickit_run.test=run_click_inference
 
     native_build_env = env_builder.build_env
 
     def build_project_env(env_file, engine_file, num_envs, device, visualize, record_video=False):
         env_config, engine_config = env_builder.load_configs(env_file, engine_file)
-        if env_config["env_name"] != "command_amp":
+        if env_config["env_name"] not in ("command_amp", "goal_amp"):
             return native_build_env(
                 env_file, engine_file, num_envs, device, visualize, record_video
             )
-        return CommandAMPEnv(
+        env_class = GoalAMPEnv if env_config["env_name"] == "goal_amp" else CommandAMPEnv
+        return env_class(
             env_config=env_config,
             engine_config=engine_config,
             num_envs=num_envs,
@@ -144,6 +202,7 @@ def main() -> None:
             'max_samples': args.max_samples, 'seed': args.seed,
             'model_file': str(model_file) if model_file else None,
             'initialization': 'weights_only' if model_file else 'fresh',
+            'env_name': env_settings['env_name'],
         }, indent=2))
 
     run_argv = [

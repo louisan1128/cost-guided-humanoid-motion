@@ -1,0 +1,196 @@
+env_name: goal_amp
+char_file: data/assets/humanoid/humanoid.xml
+camera_mode: track
+episode_length: 22.0
+global_obs: false
+root_height_obs: true
+pose_termination: false
+pose_termination_dist: 1.0
+enable_phase_obs: false
+enable_tar_obs: false
+num_phase_encoding: 4
+tar_obs_steps:
+- 1
+- 2
+- 3
+rand_reset: true
+log_tracking_error: false
+ref_char_offset:
+- 2.0
+- 0.0
+- 0.0
+init_pose:
+- 0
+- 0
+- 0.882416
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 1.5708
+- 0
+- 0
+- 0
+- -1.5708
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+enable_early_termination: true
+key_bodies:
+- head
+- right_hand
+- left_hand
+- right_foot
+- left_foot
+contact_bodies:
+- right_foot
+- left_foot
+motion_file: outputs/teacher_symmetric_prior_v13_retry/motions.yaml
+joint_err_w:
+- 1.0
+- 0.6
+- 0.6
+- 0.4
+- 0.0
+- 0.6
+- 0.4
+- 0.0
+- 1.0
+- 0.6
+- 0.4
+- 1.0
+- 0.6
+- 0.4
+reward_pose_w: 0.5
+reward_vel_w: 0.1
+reward_root_pose_w: 0.15
+reward_root_vel_w: 0.1
+reward_key_pos_w: 0.15
+reward_pose_scale: 0.25
+reward_vel_scale: 0.01
+reward_root_pose_scale: 5.0
+reward_root_vel_scale: 1.0
+reward_key_pos_scale: 10.0
+visualize_ref_char: false
+num_disc_obs_steps: 10
+goal:
+  distance_range:
+  - 3.0
+  - 5.0
+  bearing_range_deg:
+  - -180.0
+  - 180.0
+  final_yaw_offset_deg:
+  - 0.0
+  - 0.0
+  stand_reset_probability: 1.0
+  stand_motion_id: 4
+  walk_motion_id: 1
+  stand_time_range:
+  - 6.5
+  - 6.5
+  walk_reset_max_time: 0.8
+  position_tolerance: 0.2
+  yaw_tolerance_deg: 15
+  speed_tolerance: 0.15
+  angular_tolerance: 0.2
+  walking_speed: 1.2
+  deceleration_gain: 0.9
+  yaw_activation_distance: 1.0
+  hold_seconds: 1.0
+  reward_weights:
+    progress: 0.1
+    velocity: 0.3
+    proximity: 0.15
+    yaw: 0.15
+    stop: 0.6
+    angular: 0.3
+    travel_heading: 0.25
+    backward: 0.5
+    turn_drive: 0.2
+    arrival_valid: 0.15
+    arrival_velocity: 0.35
+    alignment_drive: 0.6
+    alignment_position: 0.6
+  stand_hold_goal_probability: 0.25
+  stop_deadband: 0.12
+  quality:
+    upright_weight: 0.2
+    upper_pose_weight: 0.1
+    slip_weight: 0.2
+    motion_weight: 0.45
+    motion_velocity_weight: 1.0
+    actual_speed_margin: 0.3
+    active_turn_reference: true
+    active_approach_reference: true
+  walk_motion_ids:
+  - 1
+  - 2
+  - 3
+  - 6
+  - 7
+  - 8
+  stand_motion_ids:
+  - 4
+  - 9
+  max_observation_distance: 1.0
+  steering:
+    arrival_radius: 0.6
+    yaw_gain: 1.5
+    max_yaw_rate: 0.8
+    yaw_rate_scale: 0.4
+    arrival_position_deadband: 0.2
+    turn_forward_speed: 0.25
+    turn_forward_min_distance: 1.0
+    turn_potential_m_per_rad: 0.5
+  legacy_goal_probability: 0.35
+  reset_foot_clearance_m: 0.002
+  walk_reset_focus:
+    probability: 0.35
+    motion_ids:
+    - 1
+    - 6
+    time_range:
+    - 0.72
+    - 0.85
+  turn_goal_focus:
+    probability: 0.5
+    absolute_range_deg:
+    - 150.0
+    - 180.0
+    opposite_probability: 0.35
+  arrival_yaw_rehearsal:
+    probability: 0.65
+    bearing_limit_deg: 60.0
+    yaw_offset_limit_deg: 90.0
+  arrival_velocity_radius: 0.6
+  arrival_velocity_scale: 0.08
+  arrival_velocity_stop_inside: true
+  sequential_arrival:
+    enter_distance: 0.24
+    leave_distance: 0.6
+    enter_speed: 0.18
+    max_alignment_rate: 0.5
+    position_gain: 0.5
+    position_speed_cap: 0.08
+    turn_route: left
+    max_heading_request_deg: 45

@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-05",
+  "purpose": "Complete scope/fair-cost comparison/matched diagnostics",
+  "training_updates": 0,
+  "route_prior": false,
+  "root_post_edit_diffusion": false,
+  "shared_feasibility_weight": 1,
+  "kinematic_limits": {
+    "speed": 2,
+    "yaw_rate": 1.5,
+    "acceleration": 6,
+    "yaw_acceleration": 8
+  },
+  "limits_not_full_body_feasibility": true,
+  "MLP_candidates": [
+    0.05,
+    0.15
+  ],
+  "DP_candidates": [
+    15,
+    30
+  ],
+  "train": "12 train sources, seed4504, old train geometry",
+  "selection": "per-method maximize success, minimize falls, minimize conservative collisions; ties choose first declared candidate; no final retuning",
+  "final": "24 existing V1 followup scenes; MLP deterministic seed4504, DP all sampling seeds4504/4505; M0/D3 seed4504; D0 prior V1 reused and labeled; no novel independent source claim",
+  "budget": {
+    "train_episodes": 48,
+    "new_final_episodes": 120,
+    "single_environment_profiles": 5
+  },
+  "success": "unchanged V1:45s,1.25m,45deg,.15mps,.2radps,5s hold,net drift .1m,post2s,no collision",
+  "scope": "circle and box nominal width<=.8m primary; bigger objects/walls stress, report every scene",
+  "diagnostics": "root plan penetration vs clearance margin .5m at .5s before first contact; execution gap; heuristic not causal certification; show same-context nominal and adjusted with actual path, collision, goal errors and latency",
+  "caveat": "MLP bounded integrated output optimization vs diffusion denoising use identical cost/information; parameterization and iteration budgets differ, not equal-compute architecture test"
+}

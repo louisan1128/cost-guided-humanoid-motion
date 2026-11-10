@@ -1,0 +1,83 @@
+{
+  "status": "comparison_completed_not_model_promotion",
+  "models": {
+    "mlp": "/home/an/Desktop/project_alpha/outputs/obstacle_repair_v10/h60_models/mlp/model.pt",
+    "diffusion": "/home/an/Desktop/project_alpha/outputs/obstacle_repair_v10/h60_models/diffusion/model.pt",
+    "decoder": "/home/an/Desktop/project_alpha/outputs/obstacle_repair_v10/decoder_repair/model.pt"
+  },
+  "protocol_sha256": "040d28ffcbb155de5c0bc23fc0b31344a7aeccac592395f589a0dcf7f079f64b",
+  "selection": {
+    "M1": {
+      "flag": "--lr",
+      "value": 0.05,
+      "candidates": [
+        {
+          "value": 0.05,
+          "successes": 3,
+          "falls": 8,
+          "collisions": 8
+        },
+        {
+          "value": 0.15,
+          "successes": 2,
+          "falls": 8,
+          "collisions": 8
+        }
+      ]
+    },
+    "D2": {
+      "flag": "--guide-scale",
+      "value": 15,
+      "candidates": [
+        {
+          "value": 15,
+          "successes": 7,
+          "falls": 2,
+          "collisions": 5
+        },
+        {
+          "value": 30,
+          "successes": 6,
+          "falls": 2,
+          "collisions": 6
+        }
+      ]
+    }
+  },
+  "report": "reports/guidance_comparison_v2.md",
+  "report_sha256": "0cc128d2e2ecec33836e604dccc26ce8bc68552c4e79f1fd909033ca0c233c3e",
+  "assets_sha256": {
+    "reports/assets/guidance_comparison_v2/M1_scene00_PASS_analysis.mp4": "b76c1cefe2c5d6fde5d72c576f22b24f3c83d96ed96dbbb6e02a719caea0c06f",
+    "reports/assets/guidance_comparison_v2/M1_scene00_PASS_timeline.png": "9eae57cec5571c08e0137651f75fe92ef998d389e34fa78de76ec51808e7828d",
+    "reports/assets/guidance_comparison_v2/shared_cost_gradient.json": "c7d361794847ca30069254dcb7e979cb90e9be6ccfb445326a9de07dba3ca242",
+    "reports/assets/guidance_comparison_v2/M1_scene04_FAIL_timeline.png": "79eb4529bbaf7b71bd4f7e637f02d7a9f50c1ecdd418b9c1ba6fec40e3c9d75c",
+    "reports/assets/guidance_comparison_v2/scenes.json": "49837eb699388cbc384464c079b062ba497a00188e3266b8a32fb564c0ef7a31",
+    "reports/assets/guidance_comparison_v2/D2_scene00_PASS_analysis.mp4": "4de808faff22ddcdcdd755881439b40c63985d61733f694bf30b2a9300acaf0f",
+    "reports/assets/guidance_comparison_v2/summary.json": "20c390130444251c992c6b5870c65f6dc76c4092ffd8eb53d1440ff25f470643",
+    "reports/assets/guidance_comparison_v2/D2_scene04_PASS_timeline.png": "a170c4ffb4c4bbfc834a210e017ce979ab37c3453edfc7d8eb473062c7c44984",
+    "reports/assets/guidance_comparison_v2/M1_scene00_PASS_frames.jpg": "a2ca67db8a726c3d7658f5bfa97dedfc65010febe239d7dcb7a0fe4fe0bf8215",
+    "reports/assets/guidance_comparison_v2/D2_scene04_PASS_analysis.mp4": "7a272393d6065d7fefcc4e709b60a9792dc684bdb364c5c17f68290bcdf2e889",
+    "reports/assets/guidance_comparison_v2/protocol.json": "040d28ffcbb155de5c0bc23fc0b31344a7aeccac592395f589a0dcf7f079f64b",
+    "reports/assets/guidance_comparison_v2/M1_scene04_FAIL_analysis.mp4": "f0e6c17e93b35ecafb85a2a9eea84b405fe6e91eb6ffd57b95f35f6173ca1251",
+    "reports/assets/guidance_comparison_v2/D0_reused_scene00_FAIL_analysis.mp4": "ce4c721bd0f2261d04ab627293cd1afdea7f61e4208499353189f91c8d2049b3",
+    "reports/assets/guidance_comparison_v2/D2_scene00_PASS_timeline.png": "288d0f0813463dc31bdac40e6f5ef0862f0320da611725954fe412df693e0146",
+    "reports/assets/guidance_comparison_v2/D2_scene00_PASS_frames.jpg": "afd3800aa1f6002ea741c8671b739caacc1c35e673840853b4739110c7661ce4",
+    "reports/assets/guidance_comparison_v2/D2_scene02_FAIL_frames.jpg": "d693f4ccd5c116d7cf9aa87d8006de8e42e839333b8ee90994ee30c1be4a7b3d",
+    "reports/assets/guidance_comparison_v2/comparison.png": "ce0cf87753822fb0eb828d6515aac638d526bce347d4062a95828942264d66f3",
+    "reports/assets/guidance_comparison_v2/D0_reused_scene00_FAIL_frames.jpg": "7a4692b2cce1b885af03acb5f7c1ad6ec7611fceb82ffc10eafc23f7ccd3ca42",
+    "reports/assets/guidance_comparison_v2/M1_scene04_FAIL_frames.jpg": "aa71fdd8001cb04c11c5c9dd4b329e7190dbb4e7ebfbb31aab2481c3ae022844",
+    "reports/assets/guidance_comparison_v2/episodes.csv": "7edf5dcdf1acd245a096acc60f13fce2d01d4698a5b0f45a09e3ffd160e0d438",
+    "reports/assets/guidance_comparison_v2/selection.json": "6f75a4b3db9db157803a264b35d08121f10d055046cb6684ea99431045184f46",
+    "reports/assets/guidance_comparison_v2/D2_scene04_PASS_frames.jpg": "9ff931d30643217e9a8b00f1869adfeefc78bb7620a4e02b1b88b7ad49980349",
+    "reports/assets/guidance_comparison_v2/manifest.json": "4eb234f33c3ae770dcc2afebb16457448b0b833978e7f96715f381be67cadf37",
+    "reports/assets/guidance_comparison_v2/D2_scene02_FAIL_timeline.png": "74073cbd25628739965d236af26ae7d7e58ac191f93cde4f82e302424ece5dee",
+    "reports/assets/guidance_comparison_v2/D0_reused_scene00_FAIL_timeline.png": "1ef272dd871709257312d0706b0a3b456d266b42e8200ca99e69d96e8ce5955a",
+    "reports/assets/guidance_comparison_v2/D2_scene02_FAIL_analysis.mp4": "33b80880d528111d492cbff179d63c43decdef1e223a392b365fc4533a7f5c7b",
+    "reports/assets/guidance_comparison_v2/preview.jpg": "29897a00af52d421487f490da6378cdac9d52f3171ffbccd9e2218a02a9af113"
+  },
+  "analysis_code_sha256": {
+    "scripts/analyze_guidance_comparison_v2.py": "f758625a2ee4532cbd0831561e62caee638ea8f885a148a622c577765e5d785c",
+    "scripts/render_guidance_comparison_v2.py": "e6ad2e252532df1a6ac08bd658f699743da2ef5581335c60db2ce9b6f4d55190"
+  },
+  "verification_scope": "14 CPU tests, shared cost finite difference, matched states, full video decode and selected frame inspection; original frozen files preserved"
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "file": "D0_reused_scene00_FAIL_analysis.mp4",
+    "frames": 198,
+    "duration_s": 6.6,
+    "trajectory_file": "/home/an/Desktop/project_alpha/outputs/guidance_only_v1/final/D0_legacy_4504/episode_000.pt",
+    "scene_id": 0,
+    "method": "D0_reused",
+    "success": "False",
+    "frame_sheet": "D0_reused_scene00_FAIL_frames.jpg",
+    "timeline": "D0_reused_scene00_FAIL_timeline.png"
+  },
+  {
+    "file": "M1_scene00_PASS_analysis.mp4",
+    "frames": 599,
+    "duration_s": 19.966666666666665,
+    "trajectory_file": "/home/an/Desktop/project_alpha/outputs/guidance_comparison_v2/final/M1_4504/episode_000.pt",
+    "scene_id": 0,
+    "method": "M1",
+    "success": "True",
+    "frame_sheet": "M1_scene00_PASS_frames.jpg",
+    "timeline": "M1_scene00_PASS_timeline.png"
+  },
+  {
+    "file": "D2_scene00_PASS_analysis.mp4",
+    "frames": 459,
+    "duration_s": 15.3,
+    "trajectory_file": "/home/an/Desktop/project_alpha/outputs/guidance_comparison_v2/final/D2_4504/episode_000.pt",
+    "scene_id": 0,
+    "method": "D2",
+    "success": "True",
+    "frame_sheet": "D2_scene00_PASS_frames.jpg",
+    "timeline": "D2_scene00_PASS_timeline.png"
+  },
+  {
+    "file": "D2_scene02_FAIL_analysis.mp4",
+    "frames": 600,
+    "duration_s": 20.0,
+    "trajectory_file": "/home/an/Desktop/project_alpha/outputs/guidance_comparison_v2/final/D2_4504/episode_002.pt",
+    "scene_id": 2,
+    "method": "D2",
+    "success": "False",
+    "frame_sheet": "D2_scene02_FAIL_frames.jpg",
+    "timeline": "D2_scene02_FAIL_timeline.png"
+  },
+  {
+    "file": "M1_scene04_FAIL_analysis.mp4",
+    "frames": 262,
+    "duration_s": 8.733333333333333,
+    "trajectory_file": "/home/an/Desktop/project_alpha/outputs/guidance_comparison_v2/final/M1_4504/episode_004.pt",
+    "scene_id": 4,
+    "method": "M1",
+    "success": "False",
+    "frame_sheet": "M1_scene04_FAIL_frames.jpg",
+    "timeline": "M1_scene04_FAIL_timeline.png"
+  },
+  {
+    "file": "D2_scene04_PASS_analysis.mp4",
+    "frames": 600,
+    "duration_s": 20.0,
+    "trajectory_file": "/home/an/Desktop/project_alpha/outputs/guidance_comparison_v2/final/D2_4504/episode_004.pt",
+    "scene_id": 4,
+    "method": "D2",
+    "success": "True",
+    "frame_sheet": "D2_scene04_PASS_frames.jpg",
+    "timeline": "D2_scene04_PASS_timeline.png"
+  }
+]

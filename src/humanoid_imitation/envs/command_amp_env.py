@@ -4,11 +4,11 @@ from envs.amp_env import AMPEnv
 from util import torch_util
 
 
-def task_reward(local_velocity, angular_z, command):
+def task_reward(local_velocity, angular_z, command, linear_weight=0.7):
     linear = torch.exp(-4 * (local_velocity[:, 0] - command[:, 0]).square()
                        -4 * local_velocity[:, 1].square())
     angular = torch.exp(-4 * (angular_z - command[:, 1]).square())
-    return 0.7 * linear + 0.3 * angular
+    return linear_weight * linear + (1.0 - linear_weight) * angular
 
 
 class CommandAMPEnv(AMPEnv):
@@ -20,6 +20,8 @@ class CommandAMPEnv(AMPEnv):
                 raise ValueError(name)
         if not 0 <= env_config['stop_probability'] <= 1:
             raise ValueError('stop_probability')
+        if not 0 <= env_config.get('linear_reward_weight', 0.7) <= 1:
+            raise ValueError('linear_reward_weight')
         super().__init__(env_config=env_config, **kwargs)
 
     def _build_sim_tensors(self, config):
@@ -76,7 +78,9 @@ class CommandAMPEnv(AMPEnv):
 
     def _update_reward(self):
         velocity, angular = self._measured()
-        self._reward_buf[:] = task_reward(velocity, angular, self.reward_command)
+        self._reward_buf[:] = task_reward(
+            velocity, angular, self.reward_command,
+            linear_weight=self.command_config.get('linear_reward_weight', 0.7))
 
     def record_diagnostics(self):
         out = super().record_diagnostics()

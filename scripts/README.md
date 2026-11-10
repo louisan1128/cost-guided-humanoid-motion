@@ -1,13 +1,19 @@
-# 실행 도구
+# Scripts
 
-현재 작업은 [명령 조건 PPO](../configs/command/README.md)입니다.
+Start with `run_guidance_comparison_v2.py` and the [reproduction instructions](../docs/reproduction.md).
 
-- `train_command_policy.py`: 새 PPO + AMP 학습/평가 launcher.
-- `view_continuous_chain.py`: 기존 tracker의 긴 연결 장면 확인.
-- `view_transition_v2.py`: 개별 전환 장면 확인.
-- `build_five_motion_chain_probe.py`, `build_selected_transition_chain.py`: reference 연결 실험.
-- `convert_deepmimic_humanoid_motion.py`: 모션 변환 작업.
-- `train_speed_expert.py`: 예전 G1 속도 조건 실험. 현재 command policy와 별개.
+| Script | Purpose |
+| --- | --- |
+| `train_goal_teacher.py` | Goal-conditioned teacher training |
+| `collect_detour_motion_v10.py` | Collect motion variations used during decoder/generator development |
+| `repair_detour_decoder_v10.py` | Repair the shared motion-conditioned decoder |
+| `build_motion_h60_v10.py` | Build the final 60-frame dataset |
+| `train_future_motion_v10.py` | Train the final MLP and diffusion generators |
+| `run_guidance_comparison_v2.py` | Physical evaluation with the fixed final models |
+| `analyze_guidance_comparison_v2.py` | Aggregate results and diagnose failures |
+| `render_guidance_comparison_v2.py` | Render saved evaluation states and diagnostic overlays |
+| `run_guidance_heading_demo.py` | Additional heading-change demo; excluded from the main results |
+| `capture_saved_episode_isaac.py` | Capture a saved physical episode in Isaac Sim |
+| `check_publish.py` | Check publication scope, syntax, links, and local imports without simulation |
 
-이전 실행 안내 원문은 `docs/archive/scripts_before_command_ppo.md`에 보관했습니다.
-기존 스크립트는 서로 import하는 경우가 있어 옮기지 않았습니다. 각 스크립트의 `--help`와 관련 실험 기록을 함께 확인합니다.
+Other retained scripts are imports or frozen dependencies of these entry points. Their older filenames do not mean that their original experiments are the final method. Model weights, source rollouts, and external simulator assets are required for training/evaluation; they are not distributed here.

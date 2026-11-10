@@ -1,0 +1,386 @@
+[
+  {
+    "id": 0,
+    "source_id": 128,
+    "group": "followup",
+    "kind": "circle",
+    "circle": true,
+    "half_extents_m": [
+      0.2,
+      0.2
+    ],
+    "goal_distance_m": 6.324489908905438,
+    "goal_bearing_deg": -25,
+    "obstacle_distance_m": 3.09877732783597,
+    "obstacle_side_offset_m": 0.27967231865672004,
+    "relative_shape_yaw_deg": -25
+  },
+  {
+    "id": 1,
+    "source_id": 129,
+    "group": "followup",
+    "kind": "box",
+    "circle": false,
+    "half_extents_m": [
+      0.4,
+      0.2
+    ],
+    "goal_distance_m": 6.321833209508683,
+    "goal_bearing_deg": -25,
+    "obstacle_distance_m": 2.5088403279919973,
+    "obstacle_side_offset_m": -0.2323378858614259,
+    "relative_shape_yaw_deg": -25
+  },
+  {
+    "id": 2,
+    "source_id": 130,
+    "group": "followup",
+    "kind": "wall",
+    "circle": false,
+    "half_extents_m": [
+      0.125,
+      0.7
+    ],
+    "goal_distance_m": 6.057655886894041,
+    "goal_bearing_deg": -25,
+    "obstacle_distance_m": 3.2190606819842786,
+    "obstacle_side_offset_m": 0.44083728768837466,
+    "relative_shape_yaw_deg": 0
+  },
+  {
+    "id": 3,
+    "source_id": 131,
+    "group": "followup",
+    "kind": "circle",
+    "circle": true,
+    "half_extents_m": [
+      0.4,
+      0.4
+    ],
+    "goal_distance_m": 5.313958827763021,
+    "goal_bearing_deg": 0,
+    "obstacle_distance_m": 3.326050978801482,
+    "obstacle_side_offset_m": -0.3429965393955068,
+    "relative_shape_yaw_deg": 0
+  },
+  {
+    "id": 4,
+    "source_id": 132,
+    "group": "followup",
+    "kind": "box",
+    "circle": false,
+    "half_extents_m": [
+      0.4,
+      0.4
+    ],
+    "goal_distance_m": 6.2910085707700825,
+    "goal_bearing_deg": 0,
+    "obstacle_distance_m": 3.4832981507310636,
+    "obstacle_side_offset_m": 0.43982177925039967,
+    "relative_shape_yaw_deg": 25
+  },
+  {
+    "id": 5,
+    "source_id": 133,
+    "group": "followup",
+    "kind": "wall",
+    "circle": false,
+    "half_extents_m": [
+      0.125,
+      0.9
+    ],
+    "goal_distance_m": 6.43342201327104,
+    "goal_bearing_deg": 0,
+    "obstacle_distance_m": 3.3978357062617772,
+    "obstacle_side_offset_m": -0.33788057788825954,
+    "relative_shape_yaw_deg": 25
+  },
+  {
+    "id": 6,
+    "source_id": 134,
+    "group": "followup",
+    "kind": "circle",
+    "circle": true,
+    "half_extents_m": [
+      0.6,
+      0.6
+    ],
+    "goal_distance_m": 5.5390825439236995,
+    "goal_bearing_deg": 25,
+    "obstacle_distance_m": 3.1970030864693313,
+    "obstacle_side_offset_m": 0.4242202729680493,
+    "relative_shape_yaw_deg": -25
+  },
+  {
+    "id": 7,
+    "source_id": 135,
+    "group": "followup",
+    "kind": "box",
+    "circle": false,
+    "half_extents_m": [
+      0.4,
+      0.6
+    ],
+    "goal_distance_m": 5.974307414652475,
+    "goal_bearing_deg": 25,
+    "obstacle_distance_m": 3.369924233492754,
+    "obstacle_side_offset_m": -0.26429759686170595,
+    "relative_shape_yaw_deg": -25
+  },
+  {
+    "id": 8,
+    "source_id": 136,
+    "group": "followup",
+    "kind": "wall",
+    "circle": false,
+    "half_extents_m": [
+      0.125,
+      0.7
+    ],
+    "goal_distance_m": 5.938652180080471,
+    "goal_bearing_deg": 25,
+    "obstacle_distance_m": 3.266381122444435,
+    "obstacle_side_offset_m": 0.29841918490587993,
+    "relative_shape_yaw_deg": 0
+  },
+  {
+    "id": 9,
+    "source_id": 137,
+    "group": "followup",
+    "kind": "circle",
+    "circle": true,
+    "half_extents_m": [
+      0.2,
+      0.2
+    ],
+    "goal_distance_m": 6.385521161677355,
+    "goal_bearing_deg": -25,
+    "obstacle_distance_m": 3.225959711144024,
+    "obstacle_side_offset_m": -0.2823335055896697,
+    "relative_shape_yaw_deg": 0
+  },
+  {
+    "id": 10,
+    "source_id": 138,
+    "group": "followup",
+    "kind": "box",
+    "circle": false,
+    "half_extents_m": [
+      0.4,
+      0.2
+    ],
+    "goal_distance_m": 6.204767066017302,
+    "goal_bearing_deg": -25,
+    "obstacle_distance_m": 3.1622155414077753,
+    "obstacle_side_offset_m": 0.3515194800349365,
+    "relative_shape_yaw_deg": 25
+  },
+  {
+    "id": 11,
+    "source_id": 139,
+    "group": "followup",
+    "kind": "wall",
+    "circle": false,
+    "half_extents_m": [
+      0.125,
+      0.9
+    ],
+    "goal_distance_m": 6.359296682049443,
+    "goal_bearing_deg": -25,
+    "obstacle_distance_m": 3.37496259260189,
+    "obstacle_side_offset_m": -0.27033660764733763,
+    "relative_shape_yaw_deg": 25
+  },
+  {
+    "id": 12,
+    "source_id": 128,
+    "group": "followup",
+    "kind": "circle",
+    "circle": true,
+    "half_extents_m": [
+      0.4,
+      0.4
+    ],
+    "goal_distance_m": 5.512555757875228,
+    "goal_bearing_deg": 0,
+    "obstacle_distance_m": 3.427328424234951,
+    "obstacle_side_offset_m": 0.37701081178083884,
+    "relative_shape_yaw_deg": -25
+  },
+  {
+    "id": 13,
+    "source_id": 129,
+    "group": "followup",
+    "kind": "box",
+    "circle": false,
+    "half_extents_m": [
+      0.4,
+      0.4
+    ],
+    "goal_distance_m": 5.766762755180394,
+    "goal_bearing_deg": 0,
+    "obstacle_distance_m": 2.8218966826816665,
+    "obstacle_side_offset_m": -0.4405890657989143,
+    "relative_shape_yaw_deg": -25
+  },
+  {
+    "id": 14,
+    "source_id": 130,
+    "group": "followup",
+    "kind": "wall",
+    "circle": false,
+    "half_extents_m": [
+      0.125,
+      0.7
+    ],
+    "goal_distance_m": 5.286714238553633,
+    "goal_bearing_deg": 0,
+    "obstacle_distance_m": 2.5275635965298804,
+    "obstacle_side_offset_m": 0.39068560894796023,
+    "relative_shape_yaw_deg": 0
+  },
+  {
+    "id": 15,
+    "source_id": 131,
+    "group": "followup",
+    "kind": "circle",
+    "circle": true,
+    "half_extents_m": [
+      0.6,
+      0.6
+    ],
+    "goal_distance_m": 6.114023269831399,
+    "goal_bearing_deg": 25,
+    "obstacle_distance_m": 3.2452844204446594,
+    "obstacle_side_offset_m": -0.38726975170327804,
+    "relative_shape_yaw_deg": 0
+  },
+  {
+    "id": 16,
+    "source_id": 132,
+    "group": "followup",
+    "kind": "box",
+    "circle": false,
+    "half_extents_m": [
+      0.4,
+      0.6
+    ],
+    "goal_distance_m": 6.2203310929403965,
+    "goal_bearing_deg": 25,
+    "obstacle_distance_m": 3.061711092048233,
+    "obstacle_side_offset_m": 0.43034925183585554,
+    "relative_shape_yaw_deg": 25
+  },
+  {
+    "id": 17,
+    "source_id": 133,
+    "group": "followup",
+    "kind": "wall",
+    "circle": false,
+    "half_extents_m": [
+      0.125,
+      0.9
+    ],
+    "goal_distance_m": 6.250251081874279,
+    "goal_bearing_deg": 25,
+    "obstacle_distance_m": 2.9579002077832577,
+    "obstacle_side_offset_m": -0.21783194902855427,
+    "relative_shape_yaw_deg": 25
+  },
+  {
+    "id": 18,
+    "source_id": 134,
+    "group": "followup",
+    "kind": "circle",
+    "circle": true,
+    "half_extents_m": [
+      0.2,
+      0.2
+    ],
+    "goal_distance_m": 6.087903897552311,
+    "goal_bearing_deg": -25,
+    "obstacle_distance_m": 3.3817887710303065,
+    "obstacle_side_offset_m": 0.3532292503251798,
+    "relative_shape_yaw_deg": -25
+  },
+  {
+    "id": 19,
+    "source_id": 135,
+    "group": "followup",
+    "kind": "box",
+    "circle": false,
+    "half_extents_m": [
+      0.4,
+      0.2
+    ],
+    "goal_distance_m": 5.206740837803483,
+    "goal_bearing_deg": -25,
+    "obstacle_distance_m": 3.2593748435579157,
+    "obstacle_side_offset_m": -0.4152105167716174,
+    "relative_shape_yaw_deg": -25
+  },
+  {
+    "id": 20,
+    "source_id": 136,
+    "group": "followup",
+    "kind": "wall",
+    "circle": false,
+    "half_extents_m": [
+      0.125,
+      0.7
+    ],
+    "goal_distance_m": 5.524683234648572,
+    "goal_bearing_deg": -25,
+    "obstacle_distance_m": 2.8001705365800715,
+    "obstacle_side_offset_m": 0.34166292813572074,
+    "relative_shape_yaw_deg": 0
+  },
+  {
+    "id": 21,
+    "source_id": 137,
+    "group": "followup",
+    "kind": "circle",
+    "circle": true,
+    "half_extents_m": [
+      0.4,
+      0.4
+    ],
+    "goal_distance_m": 6.295733128249754,
+    "goal_bearing_deg": 0,
+    "obstacle_distance_m": 3.251035202563152,
+    "obstacle_side_offset_m": -0.44485152876827333,
+    "relative_shape_yaw_deg": 0
+  },
+  {
+    "id": 22,
+    "source_id": 138,
+    "group": "followup",
+    "kind": "box",
+    "circle": false,
+    "half_extents_m": [
+      0.4,
+      0.4
+    ],
+    "goal_distance_m": 6.324728089855893,
+    "goal_bearing_deg": 0,
+    "obstacle_distance_m": 3.402243727411656,
+    "obstacle_side_offset_m": 0.4069479047810419,
+    "relative_shape_yaw_deg": 25
+  },
+  {
+    "id": 23,
+    "source_id": 139,
+    "group": "followup",
+    "kind": "wall",
+    "circle": false,
+    "half_extents_m": [
+      0.125,
+      0.9
+    ],
+    "goal_distance_m": 6.256441121123485,
+    "goal_bearing_deg": 0,
+    "obstacle_distance_m": 3.373506160386827,
+    "obstacle_side_offset_m": -0.41189625499027427,
+    "relative_shape_yaw_deg": 25
+  }
+]

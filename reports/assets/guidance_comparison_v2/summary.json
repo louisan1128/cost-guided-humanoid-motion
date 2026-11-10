@@ -1,0 +1,722 @@
+{
+  "status": "completed",
+  "paired_source_cluster_bootstrap": {
+    "source_clusters": 12,
+    "difference_percentage_points": 31.25,
+    "percentile_95_interval_percentage_points": [
+      4.166666666666666,
+      56.25
+    ],
+    "scope": "fixed checkpoints and reused development-source scenes only; not architecture or learning-seed uncertainty"
+  },
+  "methods": {
+    "D0_reused": {
+      "groups": {
+        "all": {
+          "n": 48,
+          "successes": 0,
+          "falls": 29,
+          "contacts": 48,
+          "collisions": 48,
+          "mean_position_error_m": 2.8389869960956275,
+          "mean_yaw_error_deg": 45.99262673015584
+        },
+        "primary_small_circle_box": {
+          "n": 24,
+          "successes": 0,
+          "falls": 18,
+          "contacts": 24,
+          "collisions": 24,
+          "mean_position_error_m": 2.5472175016378364,
+          "mean_yaw_error_deg": 59.206498252966945
+        },
+        "stress_large_or_wall": {
+          "n": 24,
+          "successes": 0,
+          "falls": 11,
+          "contacts": 24,
+          "collisions": 24,
+          "mean_position_error_m": 3.1307564905534186,
+          "mean_yaw_error_deg": 32.77875520734474
+        },
+        "circle": {
+          "n": 16,
+          "successes": 0,
+          "falls": 13,
+          "contacts": 16,
+          "collisions": 16,
+          "mean_position_error_m": 2.4744550539180636,
+          "mean_yaw_error_deg": 65.23898456053288
+        },
+        "box": {
+          "n": 16,
+          "successes": 0,
+          "falls": 10,
+          "contacts": 16,
+          "collisions": 16,
+          "mean_position_error_m": 2.626242786180228,
+          "mean_yaw_error_deg": 44.709290365195066
+        },
+        "wall": {
+          "n": 16,
+          "successes": 0,
+          "falls": 6,
+          "contacts": 16,
+          "collisions": 16,
+          "mean_position_error_m": 3.416263148188591,
+          "mean_yaw_error_deg": 28.029605264739576
+        },
+        "box_width_0.8": {
+          "n": 12,
+          "successes": 0,
+          "falls": 8,
+          "contacts": 12,
+          "collisions": 12,
+          "mean_position_error_m": 2.365685005361835,
+          "mean_yaw_error_deg": 40.116720365984854
+        },
+        "box_width_1.2": {
+          "n": 4,
+          "successes": 0,
+          "falls": 2,
+          "contacts": 4,
+          "collisions": 4,
+          "mean_position_error_m": 3.4079161286354065,
+          "mean_yaw_error_deg": 58.48700036282569
+        },
+        "circle_width_0.4": {
+          "n": 6,
+          "successes": 0,
+          "falls": 6,
+          "contacts": 6,
+          "collisions": 6,
+          "mean_position_error_m": 3.406687537829081,
+          "mean_yaw_error_deg": 90.67114258414792
+        },
+        "circle_width_0.8": {
+          "n": 6,
+          "successes": 0,
+          "falls": 4,
+          "contacts": 6,
+          "collisions": 6,
+          "mean_position_error_m": 2.050812457998594,
+          "mean_yaw_error_deg": 65.92140969575014
+        },
+        "circle_width_1.2": {
+          "n": 4,
+          "successes": 0,
+          "falls": 3,
+          "contacts": 4,
+          "collisions": 4,
+          "mean_position_error_m": 1.7115702219307423,
+          "mean_yaw_error_deg": 26.067109822284426
+        },
+        "wall_width_1.4": {
+          "n": 8,
+          "successes": 0,
+          "falls": 0,
+          "contacts": 8,
+          "collisions": 8,
+          "mean_position_error_m": 2.9914791882038116,
+          "mean_yaw_error_deg": 26.215743169638657
+        },
+        "wall_width_1.8": {
+          "n": 8,
+          "successes": 0,
+          "falls": 6,
+          "contacts": 8,
+          "collisions": 8,
+          "mean_position_error_m": 3.8410471081733704,
+          "mean_yaw_error_deg": 29.843467359840496
+        }
+      },
+      "failure_categories": {
+        "generated_plan_insufficient_margin": 15,
+        "generated_root_enters_obstacle": 33
+      },
+      "plan_speed_p95_episode_mean": 1.0581650772442421,
+      "plan_yaw_rate_p95_episode_mean": 0.7231239622769255,
+      "single_env_planning_decoder_p50_ms": 7.116763000340143,
+      "single_env_planning_decoder_p95_ms": 8.153679500628641,
+      "profile_samples": 110
+    },
+    "D2": {
+      "groups": {
+        "all": {
+          "n": 48,
+          "successes": 33,
+          "falls": 7,
+          "contacts": 13,
+          "collisions": 14,
+          "mean_position_error_m": 1.0225251575466245,
+          "mean_yaw_error_deg": 15.559420775919124
+        },
+        "primary_small_circle_box": {
+          "n": 24,
+          "successes": 23,
+          "falls": 1,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.12086027845119436,
+          "mean_yaw_error_deg": 10.85735109380913
+        },
+        "stress_large_or_wall": {
+          "n": 24,
+          "successes": 10,
+          "falls": 6,
+          "contacts": 13,
+          "collisions": 14,
+          "mean_position_error_m": 1.9241900366420548,
+          "mean_yaw_error_deg": 20.26149045802912
+        },
+        "circle": {
+          "n": 16,
+          "successes": 14,
+          "falls": 1,
+          "contacts": 2,
+          "collisions": 2,
+          "mean_position_error_m": 0.5313868897501379,
+          "mean_yaw_error_deg": 10.479157543050004
+        },
+        "box": {
+          "n": 16,
+          "successes": 13,
+          "falls": 2,
+          "contacts": 1,
+          "collisions": 2,
+          "mean_position_error_m": 0.3932152718771249,
+          "mean_yaw_error_deg": 20.475632394283522
+        },
+        "wall": {
+          "n": 16,
+          "successes": 6,
+          "falls": 4,
+          "contacts": 10,
+          "collisions": 10,
+          "mean_position_error_m": 2.142973311012611,
+          "mean_yaw_error_deg": 15.723472390423852
+        },
+        "box_width_0.8": {
+          "n": 12,
+          "successes": 11,
+          "falls": 1,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.13131253266086182,
+          "mean_yaw_error_deg": 16.38226756350937
+        },
+        "box_width_1.2": {
+          "n": 4,
+          "successes": 2,
+          "falls": 1,
+          "contacts": 1,
+          "collisions": 2,
+          "mean_position_error_m": 1.1789234895259142,
+          "mean_yaw_error_deg": 32.75572688660597
+        },
+        "circle_width_0.4": {
+          "n": 6,
+          "successes": 6,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.12101956146458785,
+          "mean_yaw_error_deg": 5.595346783526569
+        },
+        "circle_width_0.8": {
+          "n": 6,
+          "successes": 6,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.099796487018466,
+          "mean_yaw_error_deg": 5.069522464691219
+        },
+        "circle_width_1.2": {
+          "n": 4,
+          "successes": 2,
+          "falls": 1,
+          "contacts": 2,
+          "collisions": 2,
+          "mean_position_error_m": 1.794323486275971,
+          "mean_yaw_error_deg": 25.91932629987333
+        },
+        "wall_width_1.4": {
+          "n": 8,
+          "successes": 2,
+          "falls": 1,
+          "contacts": 6,
+          "collisions": 6,
+          "mean_position_error_m": 2.3670466346666217,
+          "mean_yaw_error_deg": 24.18899072153463
+        },
+        "wall_width_1.8": {
+          "n": 8,
+          "successes": 4,
+          "falls": 3,
+          "contacts": 4,
+          "collisions": 4,
+          "mean_position_error_m": 1.9188999873586,
+          "mean_yaw_error_deg": 7.257954059313078
+        }
+      },
+      "failure_categories": {
+        "success": 33,
+        "generated_plan_insufficient_margin": 6,
+        "no_contact_fall_generation_execution_unresolved": 1,
+        "generated_root_enters_obstacle": 8
+      },
+      "plan_speed_p95_episode_mean": 1.0324014698465664,
+      "plan_yaw_rate_p95_episode_mean": 0.6463902553233006,
+      "single_env_planning_decoder_p50_ms": 76.08545799939748,
+      "single_env_planning_decoder_p95_ms": 81.45819484943786,
+      "profile_samples": 110
+    },
+    "D3": {
+      "groups": {
+        "all": {
+          "n": 24,
+          "successes": 24,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.07601147843524814,
+          "mean_yaw_error_deg": 7.304539724732908
+        },
+        "primary_small_circle_box": {
+          "n": 12,
+          "successes": 12,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.06921941880136728,
+          "mean_yaw_error_deg": 8.669980201774296
+        },
+        "stress_large_or_wall": {
+          "n": 12,
+          "successes": 12,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.08280353806912899,
+          "mean_yaw_error_deg": 5.939099247691517
+        },
+        "circle": {
+          "n": 8,
+          "successes": 8,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.07417493592947721,
+          "mean_yaw_error_deg": 8.550850585804923
+        },
+        "box": {
+          "n": 8,
+          "successes": 8,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.0698062190786004,
+          "mean_yaw_error_deg": 8.048564504018561
+        },
+        "wall": {
+          "n": 8,
+          "successes": 8,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.08405328029766679,
+          "mean_yaw_error_deg": 5.314204084375238
+        },
+        "box_width_0.8": {
+          "n": 6,
+          "successes": 6,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.06904554553329945,
+          "mean_yaw_error_deg": 8.547674103167092
+        },
+        "box_width_1.2": {
+          "n": 2,
+          "successes": 2,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.07208823971450329,
+          "mean_yaw_error_deg": 6.551235706572967
+        },
+        "circle_width_0.4": {
+          "n": 3,
+          "successes": 3,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.06271123265226682,
+          "mean_yaw_error_deg": 8.831106890041935
+        },
+        "circle_width_0.8": {
+          "n": 3,
+          "successes": 3,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.07607535148660342,
+          "mean_yaw_error_deg": 8.753465710721068
+        },
+        "circle_width_1.2": {
+          "n": 2,
+          "successes": 2,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.0885198675096035,
+          "mean_yaw_error_deg": 7.8265434420751845
+        },
+        "wall_width_1.4": {
+          "n": 4,
+          "successes": 4,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.11387591995298862,
+          "mean_yaw_error_deg": 5.014911598247627
+        },
+        "wall_width_1.8": {
+          "n": 4,
+          "successes": 4,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.05423064064234495,
+          "mean_yaw_error_deg": 5.61349657050285
+        }
+      },
+      "failure_categories": {
+        "success": 24
+      },
+      "plan_speed_p95_episode_mean": 1.4580737027029194,
+      "plan_yaw_rate_p95_episode_mean": 1.4918417066335674,
+      "single_env_planning_decoder_p50_ms": 7.6333389997671475,
+      "single_env_planning_decoder_p95_ms": 8.471689500311186,
+      "profile_samples": 110
+    },
+    "M0": {
+      "groups": {
+        "all": {
+          "n": 24,
+          "successes": 8,
+          "falls": 8,
+          "contacts": 13,
+          "collisions": 14,
+          "mean_position_error_m": 1.6024004501911502,
+          "mean_yaw_error_deg": 33.74219872871304
+        },
+        "primary_small_circle_box": {
+          "n": 12,
+          "successes": 7,
+          "falls": 3,
+          "contacts": 4,
+          "collisions": 4,
+          "mean_position_error_m": 0.8240370781471332,
+          "mean_yaw_error_deg": 31.56557439228528
+        },
+        "stress_large_or_wall": {
+          "n": 12,
+          "successes": 1,
+          "falls": 5,
+          "contacts": 9,
+          "collisions": 10,
+          "mean_position_error_m": 2.380763822235167,
+          "mean_yaw_error_deg": 35.9188230651408
+        },
+        "circle": {
+          "n": 8,
+          "successes": 4,
+          "falls": 1,
+          "contacts": 3,
+          "collisions": 3,
+          "mean_position_error_m": 0.9831495997495949,
+          "mean_yaw_error_deg": 31.606613245961235
+        },
+        "box": {
+          "n": 8,
+          "successes": 4,
+          "falls": 3,
+          "contacts": 3,
+          "collisions": 3,
+          "mean_position_error_m": 1.1328389458358288,
+          "mean_yaw_error_deg": 34.021191198936286
+        },
+        "wall": {
+          "n": 8,
+          "successes": 0,
+          "falls": 4,
+          "contacts": 7,
+          "collisions": 8,
+          "mean_position_error_m": 2.6912128049880266,
+          "mean_yaw_error_deg": 35.5987917412416
+        },
+        "box_width_0.8": {
+          "n": 6,
+          "successes": 4,
+          "falls": 2,
+          "contacts": 2,
+          "collisions": 2,
+          "mean_position_error_m": 0.9406614502271017,
+          "mean_yaw_error_deg": 26.07018966841767
+        },
+        "box_width_1.2": {
+          "n": 2,
+          "successes": 0,
+          "falls": 1,
+          "contacts": 1,
+          "collisions": 1,
+          "mean_position_error_m": 1.7093714326620102,
+          "mean_yaw_error_deg": 57.874195790492145
+        },
+        "circle_width_0.4": {
+          "n": 3,
+          "successes": 2,
+          "falls": 1,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.4477199539542198,
+          "mean_yaw_error_deg": 64.25430751071279
+        },
+        "circle_width_0.8": {
+          "n": 3,
+          "successes": 1,
+          "falls": 0,
+          "contacts": 2,
+          "collisions": 2,
+          "mean_position_error_m": 0.9671054581801096,
+          "mean_yaw_error_deg": 9.867610721592994
+        },
+        "circle_width_1.2": {
+          "n": 2,
+          "successes": 1,
+          "falls": 0,
+          "contacts": 1,
+          "collisions": 1,
+          "mean_position_error_m": 1.8103602807968855,
+          "mean_yaw_error_deg": 15.24357563538626
+        },
+        "wall_width_1.4": {
+          "n": 4,
+          "successes": 0,
+          "falls": 2,
+          "contacts": 4,
+          "collisions": 4,
+          "mean_position_error_m": 2.6303443163633347,
+          "mean_yaw_error_deg": 40.102779949888856
+        },
+        "wall_width_1.8": {
+          "n": 4,
+          "successes": 0,
+          "falls": 2,
+          "contacts": 3,
+          "collisions": 4,
+          "mean_position_error_m": 2.7520812936127186,
+          "mean_yaw_error_deg": 31.094803532594348
+        }
+      },
+      "failure_categories": {
+        "success": 8,
+        "generated_root_enters_obstacle": 7,
+        "generated_plan_insufficient_margin": 7,
+        "no_contact_goal_or_hold_failure": 1,
+        "no_contact_fall_generation_execution_unresolved": 1
+      },
+      "plan_speed_p95_episode_mean": 1.0412712277223666,
+      "plan_yaw_rate_p95_episode_mean": 0.6106925920893748,
+      "single_env_planning_decoder_p50_ms": 0.9025869994729874,
+      "single_env_planning_decoder_p95_ms": 1.1607425003603564,
+      "profile_samples": 110
+    },
+    "M1": {
+      "groups": {
+        "all": {
+          "n": 24,
+          "successes": 9,
+          "falls": 10,
+          "contacts": 13,
+          "collisions": 14,
+          "mean_position_error_m": 1.5650816929992288,
+          "mean_yaw_error_deg": 37.06373091897587
+        },
+        "primary_small_circle_box": {
+          "n": 12,
+          "successes": 6,
+          "falls": 4,
+          "contacts": 5,
+          "collisions": 5,
+          "mean_position_error_m": 1.0609949052644272,
+          "mean_yaw_error_deg": 32.71817868648272
+        },
+        "stress_large_or_wall": {
+          "n": 12,
+          "successes": 3,
+          "falls": 6,
+          "contacts": 8,
+          "collisions": 9,
+          "mean_position_error_m": 2.0691684807340303,
+          "mean_yaw_error_deg": 41.40928315146903
+        },
+        "circle": {
+          "n": 8,
+          "successes": 4,
+          "falls": 2,
+          "contacts": 3,
+          "collisions": 3,
+          "mean_position_error_m": 0.6636507755611092,
+          "mean_yaw_error_deg": 22.480034569112995
+        },
+        "box": {
+          "n": 8,
+          "successes": 3,
+          "falls": 4,
+          "contacts": 5,
+          "collisions": 5,
+          "mean_position_error_m": 1.9797955960966647,
+          "mean_yaw_error_deg": 39.699719387909006
+        },
+        "wall": {
+          "n": 8,
+          "successes": 2,
+          "falls": 4,
+          "contacts": 5,
+          "collisions": 6,
+          "mean_position_error_m": 2.0517987073399127,
+          "mean_yaw_error_deg": 49.01143879990563
+        },
+        "box_width_0.8": {
+          "n": 6,
+          "successes": 2,
+          "falls": 3,
+          "contacts": 4,
+          "collisions": 4,
+          "mean_position_error_m": 2.038543624803424,
+          "mean_yaw_error_deg": 37.16227209473754
+        },
+        "box_width_1.2": {
+          "n": 2,
+          "successes": 1,
+          "falls": 1,
+          "contacts": 1,
+          "collisions": 1,
+          "mean_position_error_m": 1.803551509976387,
+          "mean_yaw_error_deg": 47.31206126742342
+        },
+        "circle_width_0.4": {
+          "n": 3,
+          "successes": 1,
+          "falls": 1,
+          "contacts": 1,
+          "collisions": 1,
+          "mean_position_error_m": 0.12686530376474062,
+          "mean_yaw_error_deg": 50.60797588160224
+        },
+        "circle_width_0.8": {
+          "n": 3,
+          "successes": 3,
+          "falls": 0,
+          "contacts": 0,
+          "collisions": 0,
+          "mean_position_error_m": 0.04002706768612067,
+          "mean_yaw_error_deg": 5.940194674853561
+        },
+        "circle_width_1.2": {
+          "n": 2,
+          "successes": 0,
+          "falls": 1,
+          "contacts": 2,
+          "collisions": 2,
+          "mean_position_error_m": 2.404264545068145,
+          "mean_yaw_error_deg": 5.097882441768267
+        },
+        "wall_width_1.4": {
+          "n": 4,
+          "successes": 0,
+          "falls": 3,
+          "contacts": 4,
+          "collisions": 4,
+          "mean_position_error_m": 2.837794117629528,
+          "mean_yaw_error_deg": 51.83405460177477
+        },
+        "wall_width_1.8": {
+          "n": 4,
+          "successes": 2,
+          "falls": 1,
+          "contacts": 1,
+          "collisions": 2,
+          "mean_position_error_m": 1.2658032970502973,
+          "mean_yaw_error_deg": 46.18882299803648
+        }
+      },
+      "failure_categories": {
+        "success": 9,
+        "generated_root_enters_obstacle": 1,
+        "generated_plan_insufficient_margin": 10,
+        "safe_root_plan_but_body_execution_contact": 3,
+        "no_contact_fall_generation_execution_unresolved": 1
+      },
+      "plan_speed_p95_episode_mean": 1.5607858228186764,
+      "plan_yaw_rate_p95_episode_mean": 1.4935642185310523,
+      "single_env_planning_decoder_p50_ms": 152.74452800076688,
+      "single_env_planning_decoder_p95_ms": 180.87149780012624,
+      "profile_samples": 110
+    }
+  },
+  "new_scored_episodes": 168,
+  "reused_scored_episodes": 48,
+  "profile_runs": 5,
+  "training_updates": 0,
+  "matched_scenario_state_comparisons": 144,
+  "subprocess_wall_sum_s": 1719.0795660400017,
+  "selection": {
+    "M1": {
+      "flag": "--lr",
+      "value": 0.05,
+      "candidates": [
+        {
+          "value": 0.05,
+          "successes": 3,
+          "falls": 8,
+          "collisions": 8
+        },
+        {
+          "value": 0.15,
+          "successes": 2,
+          "falls": 8,
+          "collisions": 8
+        }
+      ]
+    },
+    "D2": {
+      "flag": "--guide-scale",
+      "value": 15,
+      "candidates": [
+        {
+          "value": 15,
+          "successes": 7,
+          "falls": 2,
+          "collisions": 5
+        },
+        {
+          "value": 30,
+          "successes": 6,
+          "falls": 2,
+          "collisions": 6
+        }
+      ]
+    }
+  },
+  "limits": {
+    "speed": 2,
+    "yaw_rate": 1.5,
+    "acceleration": 6,
+    "yaw_acceleration": 8
+  },
+  "diagnosis_not_causal_ground_truth": true
+}

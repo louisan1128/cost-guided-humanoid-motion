@@ -1,0 +1,38 @@
+{
+  "M1": {
+    "flag": "--lr",
+    "value": 0.05,
+    "candidates": [
+      {
+        "value": 0.05,
+        "successes": 3,
+        "falls": 8,
+        "collisions": 8
+      },
+      {
+        "value": 0.15,
+        "successes": 2,
+        "falls": 8,
+        "collisions": 8
+      }
+    ]
+  },
+  "D2": {
+    "flag": "--guide-scale",
+    "value": 15,
+    "candidates": [
+      {
+        "value": 15,
+        "successes": 7,
+        "falls": 2,
+        "collisions": 5
+      },
+      {
+        "value": 30,
+        "successes": 6,
+        "falls": 2,
+        "collisions": 6
+      }
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+env_name: goal_amp
+char_file: data/assets/humanoid/humanoid.xml
+camera_mode: track
+episode_length: 10.0
+global_obs: false
+root_height_obs: true
+pose_termination: false
+pose_termination_dist: 1.0
+enable_phase_obs: false
+enable_tar_obs: false
+num_phase_encoding: 4
+tar_obs_steps:
+- 1
+- 2
+- 3
+rand_reset: true
+log_tracking_error: false
+ref_char_offset:
+- 2.0
+- 0.0
+- 0.0
+init_pose:
+- 0
+- 0
+- 0.882416
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 1.5708
+- 0
+- 0
+- 0
+- -1.5708
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+enable_early_termination: true
+key_bodies:
+- head
+- right_hand
+- left_hand
+- right_foot
+- left_foot
+contact_bodies:
+- right_foot
+- left_foot
+motion_file: configs/command/motions.yaml
+joint_err_w:
+- 1.0
+- 0.6
+- 0.6
+- 0.4
+- 0.0
+- 0.6
+- 0.4
+- 0.0
+- 1.0
+- 0.6
+- 0.4
+- 1.0
+- 0.6
+- 0.4
+reward_pose_w: 0.5
+reward_vel_w: 0.1
+reward_root_pose_w: 0.15
+reward_root_vel_w: 0.1
+reward_key_pos_w: 0.15
+reward_pose_scale: 0.25
+reward_vel_scale: 0.01
+reward_root_pose_scale: 5.0
+reward_root_vel_scale: 1.0
+reward_key_pos_scale: 10.0
+visualize_ref_char: false
+num_disc_obs_steps: 10
+goal:
+  distance_range:
+  - 0.5
+  - 1.5
+  bearing_range_deg:
+  - -15
+  - 15
+  final_yaw_offset_deg:
+  - 0
+  - 0
+  stand_reset_probability: 0.5
+  stand_motion_id: 4
+  walk_motion_id: 1
+  stand_time_range:
+  - 5
+  - 7.5
+  walk_reset_max_time: 0.8
+  position_tolerance: 0.2
+  yaw_tolerance_deg: 15
+  speed_tolerance: 0.15
+  angular_tolerance: 0.2
+  walking_speed: 0.9
+  deceleration_gain: 1.5
+  yaw_activation_distance: 1.0
+  hold_seconds: 1.0
+  reward_weights:
+    progress: 0.1
+    velocity: 0.3
+    proximity: 0.15
+    yaw: 0.15
+    stop: 0.3

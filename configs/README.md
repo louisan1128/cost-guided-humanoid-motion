@@ -1,10 +1,10 @@
-# 설정
+# Configuration
 
-- `command/`: 지금 진행하는 명령 조건 PPO + AMP. 실행 안내는 해당 README.
-- `envs/`: generic humanoid tracker, 전환 평가, 과거 G1 환경.
-- `datasets/`: reference motion 목록. 실제 rollout dataset과 다르다.
-- `agents/`: 기존 PPO 설정.
-- `engines/`: simulator 설정.
-- `project.yaml`: 전체 설계와 상태 기록. 직접 실행하는 환경 파일은 아니다.
+The final evaluation uses `releases/guidance_comparison_v2_manifest.json` and `reports/assets/guidance_comparison_v2/scenes.json`.
 
-기존 설정은 실험 재현을 위해 보존한다. 새 학습은 별도 output 이름을 사용한다.
+- `releases/guidance_comparison_v2_manifest.json`: frozen model, data, and code references
+- `releases/guidance_comparison_v2_results.json`: original result hashes and evaluation metadata
+- `assets/guidance_pole.usd`: obstacle asset template
+- Other retained files: runtime or frozen dependencies of the final code
+
+Manifests describe the full local experiment, including excluded checkpoints and historical artifacts. They are provenance records, not a list of bundled files. Use the [reproduction guide](../docs/reproduction.md) before running an evaluation.

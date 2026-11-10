@@ -1,0 +1,41 @@
+{
+  "status": "evaluated separate branch; prior motion release preserved",
+  "date": "2026-11-03",
+  "teacher": "outputs/goal_teacher_sequential_v31_300/model.pt",
+  "models": {
+    "mlp": {
+      "path": "/home/an/Desktop/project_alpha/outputs/direct_action_study_v12/final/mlp/seed0/model.pt",
+      "sha256": "9b46078e4805abf9cfaa01a040323eb5f62bdc770ee39a35ee9bb614315f8b2e",
+      "role": "direct physical PD action; not motion reference",
+      "seed": 0
+    },
+    "diffusion": {
+      "path": "/home/an/Desktop/project_alpha/outputs/direct_action_study_v12/final/diffusion/seed0/model.pt",
+      "sha256": "4477ab4014cd3406a1fbd6d4b58399ff168b14fbc21272b1ba06e44d4ae4122f",
+      "role": "direct physical PD action; not motion reference",
+      "seed": 0
+    }
+  },
+  "runtime": {
+    "control_hz": 30,
+    "observation_dim": 144,
+    "action_dim": 28,
+    "history": 1,
+    "horizon": 1,
+    "execute_steps": 1,
+    "native_teacher_goal_observation_supervisor": true,
+    "reference_tracker": false,
+    "stop_reference_aid": false,
+    "teacher_action_in_evaluation": false
+  },
+  "diffusion": {
+    "prediction": "clean action",
+    "noise_steps": 100,
+    "ddim_steps": 16,
+    "candidates": 1,
+    "noise": "per query"
+  },
+  "evaluation_root": "/home/an/Desktop/project_alpha/outputs/direct_action_study_v12",
+  "selection": "seed0 fixed before test; all3trainingseeds reported; not test-best",
+  "summary": "reports/direct_action_study_v12.md"
+}

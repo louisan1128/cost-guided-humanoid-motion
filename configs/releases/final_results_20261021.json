@@ -1,0 +1,81 @@
+{
+  "status": "user_accepted_final_results_do_not_auto_promote",
+  "date": "2026-10-21",
+  "selection_source": "outputs/backfall_stability_v197/selected_candidates.json",
+  "selection_source_sha256": "80402737ac73b127c554412e6d980bdb7bc433c4dd114d583709c605ebf18e49",
+  "methods": {
+    "mlp": {
+      "label": "User-selected V192 conservative MLP20/24",
+      "score": {
+        "success": 20,
+        "fail": 3,
+        "time": 1,
+        "cases": 24
+      },
+      "files": {
+        "--generator-model": {
+          "path": "/home/an/Desktop/project_alpha/outputs/precise_heading_training_v192/mlp/conservative/model.pt",
+          "sha256": "d82c6197f17929f0e65991ce6072ca9fc92ac64f6a2b219ea55962319b89d702"
+        },
+        "--model-file": {
+          "path": "/home/an/Desktop/project_alpha/outputs/tracker_mixed_ppo_repair_v133/ppo/training/model.pt",
+          "sha256": "afa2c81c4ae3fe5906950533d7ea1f848517a5fc6ae3dcb051ec639e1c0f0b3a"
+        },
+        "--gate": {
+          "path": "/home/an/Desktop/project_alpha/outputs/precise_heading_training_v192/mlp/gate.json",
+          "sha256": "3d19db4d7895fef37c697a6232fa00a5c70c9b766f13fafed40293bb0a194dcc"
+        },
+        "--config": {
+          "path": "/home/an/Desktop/project_alpha/configs/planning/best_mlp_v165.yaml",
+          "sha256": "59dfa80f1b94a43a27cb8857ba07d6f95050d659732dfa991042cf479ca7025d"
+        },
+        "dataset_manifest": {
+          "path": "/home/an/Desktop/project_alpha/outputs/precise_heading_training_v192/mlp/dataset/manifest.json",
+          "sha256": "e00a61951a43b64d365d48c8ddd7ef724f7ac3e1f8cb95644cce1f62b9beb532"
+        },
+        "runner": {
+          "path": "/home/an/Desktop/project_alpha/scripts/run_retrieval_pilot.py",
+          "sha256": "ac721786d2e3d449162d24a72ff0489823610268d73ba82fd7660c93183df4a5"
+        }
+      }
+    },
+    "diffusion": {
+      "label": "V189A original weights + V190 entry25 + V196 terminal foot10cm; development24 only",
+      "score": {
+        "success": 19,
+        "fail": 5,
+        "time": 0,
+        "cases": 24,
+        "lost_old_successes": []
+      },
+      "files": {
+        "--generator-model": {
+          "path": "/home/an/Desktop/project_alpha/outputs/certified_arrival_data_v189/diffusion/model.pt",
+          "sha256": "5b9937fb0c5f3bff02a5ef1c144322a61637cffa3a3acc1e76935b48076ee67d"
+        },
+        "--model-file": {
+          "path": "/home/an/Desktop/project_alpha/outputs/tracker_mixed_ppo_repair_v133/ppo/training/model.pt",
+          "sha256": "afa2c81c4ae3fe5906950533d7ea1f848517a5fc6ae3dcb051ec639e1c0f0b3a"
+        },
+        "--gate": {
+          "path": "/home/an/Desktop/project_alpha/outputs/certified_arrival_data_v189/dataset_adapter_gate.json",
+          "sha256": "2fef931f97ac9d6abc9e2925863f515a17765884e837caf8c200ff9362880612"
+        },
+        "--config": {
+          "path": "/home/an/Desktop/project_alpha/configs/planning/heading_terminal_foot10_v196.yaml",
+          "sha256": "4d2b8ad309ad5fe894e5e6fa6e701b43781ab3c649000774372d3ea051e56d65"
+        },
+        "dataset_manifest": {
+          "path": "/home/an/Desktop/project_alpha/outputs/certified_arrival_data_v189/dataset/manifest.json",
+          "sha256": "f2277b4e7e6a4c0618dc84bd3c8ad07acc68fd798ba8a4a514f4706632d98004"
+        },
+        "runner": {
+          "path": "/home/an/Desktop/project_alpha/scripts/run_retrieval_pilot.py",
+          "sha256": "ac721786d2e3d449162d24a72ff0489823610268d73ba82fd7660c93183df4a5"
+        }
+      }
+    }
+  },
+  "policy": "Preserve original best MLP20/24 and diffusion19/24 as final results. New fair-condition experiments remain separate. Small improvement does not replace them.",
+  "comparison_limitation": "24 fixed development goals, same validation source and seed101. Method-specific old runtime/data differ; not an inter-method ranking."
+}

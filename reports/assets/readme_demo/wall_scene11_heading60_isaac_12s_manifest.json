@@ -1,0 +1,70 @@
+{
+  "source": "/home/an/Desktop/project_alpha/outputs/readme_heading_demo_20261110/physics/episode_001.pt",
+  "source_sha256": "e08422a99ae2810e4116a3120c83dd49306468871176d1f3c1467307512fe244",
+  "frames": 360,
+  "fps": 30,
+  "duration_s": 12.0,
+  "renderer": "Isaac Sim RTX via Isaac Lab; recorded-state playback",
+  "new_physics_evaluation": false,
+  "new_training": false,
+  "source_result": {
+    "index": 1,
+    "source_id": 139,
+    "goal_success": true,
+    "success": true,
+    "fall": false,
+    "conservative_collision": false,
+    "duration_s": 16.266666666666666,
+    "steps": 488,
+    "position_error_m": 0.17796197533607483,
+    "yaw_error_deg": 2.8430081854098623,
+    "min_root_distance_m": 1.3270082473754883,
+    "min_body_center_distance_m": 1.0886865854263306,
+    "min_body_surface_clearance_lower_bound_m": 0.1971709430217743,
+    "max_obstacle_contact_force_n": 0.0,
+    "physical_contact": false,
+    "first_contact_s": null,
+    "first_conservative_collision_s": null,
+    "passed_obstacle": true,
+    "passed_obstacle_safely": true,
+    "root_prediction_mean_error_m": 0.0016134612960740924,
+    "moving_contact_foot_slip_proxy_mps": 0.06494030356407166
+  },
+  "geometry": {
+    "id": 11,
+    "source_id": 139,
+    "group": "followup",
+    "kind": "wall",
+    "circle": false,
+    "half_extents_m": [
+      0.125,
+      0.8999999761581421
+    ],
+    "goal_distance_m": 6.359296798706055,
+    "goal_bearing_deg": -25.00000012650595,
+    "obstacle_distance_m": 3.374962568283081,
+    "obstacle_side_offset_m": -0.2703365981578827,
+    "relative_shape_yaw_deg": 25,
+    "final_yaw_relative_initial_deg": 60,
+    "index": 1,
+    "angle_world_rad": 2.8372714519500732
+  },
+  "video": "wall_scene11_isaac_10s.mp4",
+  "goal_heading_relative_initial_deg": 60,
+  "capture_is_recorded_state_playback": true,
+  "verification": "360 frames fully decoded; 12 seconds H264 yuv420p 1280x720",
+  "files": {
+    "wall_scene11_heading60_isaac_12s.mp4": {
+      "bytes": 7338648,
+      "sha256": "49f6272e0a1208e860cf11c0e33c5b7fe0f737ec8c41ec9808245f3ef911bbd3"
+    },
+    "wall_scene11_heading60_isaac_12s.gif": {
+      "bytes": 7535628,
+      "sha256": "d4abf9243abb33e7737584264f96d5ad9185102294ef92d4254a08e55917a7fc"
+    }
+  },
+  "demo_source_shift": 0,
+  "v2_source_shift": 15,
+  "included_in_v2_aggregate": false,
+  "comparison_note": "Additional demo changes final heading AND source start offset; not a heading-only paired V2 evaluation."
+}
