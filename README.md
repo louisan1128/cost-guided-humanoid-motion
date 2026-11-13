@@ -2,7 +2,7 @@
 
 **Can a humanoid adapt learned motion to obstacles at inference time, without additional training?**
 
-An undergraduate personal project built with MimicKit and Isaac Lab. I started with a PPO reference tracker, collected physical rollouts, trained MLP and diffusion models, and explored obstacle avoidance through cost guidance. The final system uses a learned action decoder conditioned on future root motion.
+A humanoid motion generation system built with MimicKit and Isaac Lab. MLP and diffusion models learn from physical rollouts collected by a PPO + AMP teacher. At inference time, obstacle costs guide the predicted motion, and a fixed learned action decoder converts it into joint targets for physics-based control.
 
 ![Isaac Sim · avoiding a 1.8 m wall · 12 seconds](reports/assets/readme_demo/wall_scene11_heading60_isaac_12s.gif)
 
